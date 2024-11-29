@@ -7,7 +7,7 @@ int calculateSwaps(int n, vector<int> &heights) {
     int maxIdx = max_element(heights.begin(), heights.end()) - heights.begin();
     int minIdx = min_element(heights.rbegin(), heights.rend()) - heights.rbegin();
     minIdx = n - 1 - minIdx;
-
+    // this line is for verify commit
     int swaps = maxIdx + (n - 1 - minIdx);
     if (maxIdx > minIdx) {
         swaps--;
