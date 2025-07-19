@@ -53,44 +53,53 @@ int main()
                 }
             }
         }
-        int tworow=0,twocol=0,maxcol=0,maxrow=0;
+        int tworow=0,twocol=0,maxcol=0,maxrow=0,row=0,col=0;
         for(int i=0;i<n;i++)
         {
-            if(rowcount[i]>maxrow)
+            if(rowcount[i]>1)
             {
-                maxrow=i;
+                maxrow++;
+            }
+            if (rowcount[i]=1)
+            {
+                row++;
             }
         }
         for(int i=0;i<m;i++)
         {
-            if(colcount[i]>maxcol)
+            if(colcount[i]>1)
             {
-                maxcol=i;
+                maxcol++;
+            }
+            if (colcount[i]=1)
+            {
+                col++;
             }
         }
 
-        for(int i=0;i<n;i++)
-        {if(i==maxrow)
-            continue;
-            else{
-            if(rowcount[i]>=2)
-            {
-                tworow+=1;
-            }}
-        }
-        for(int i=0;i<m;i++)
-        {if(i==maxcol)
-            continue;
-            else {
-            if(rowcount[i]>=2)
-            {
-                tworow+=1;
-            }
-        }
-        }
+        // for(int i=0;i<n;i++)
+        // {if(i==maxrow)
+        //     continue;
+        //     else{
+        //     if(rowcount[i]>=2)
+        //     {
+        //         tworow+=1;
+        //     }}
+        // }
+        // for(int i=0;i<m;i++)
+        // {if(i==maxcol)
+        //     continue;
+        //     else {
+        //     if(rowcount[i]>=2)
+        //     {
+        //         tworow+=1;
+        //     }
+        // }
+        // }
         
         // cout<<"column "<<twocol<<" row "<<" "<<tworow<<endl;
-        twocol>2&&tworow>2?cout<<max<<endl:cout<<max-1<<endl;
+        // twocol>2&&tworow>2?cout<<max<<endl:cout<<max-1<<endl;
+        (maxcol>1&&maxrow>1)||(row>2&&col>2)?cout<<max<<endl:cout<<max-1<<endl;
 
     }
 }
